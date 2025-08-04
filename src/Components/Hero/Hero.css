@@ -1,0 +1,23 @@
+.hero {
+    width: 85%;
+    text-align: center;
+    border: 0px solid black;
+    border-radius: 20px;
+    margin: auto;
+    background-color: #E0E2E6;
+}
+
+.slide {
+    display: flex;
+    gap: 1000px;
+}
+
+h3, p {
+   
+    color: black;
+
+}
+
+.image {
+    width: 250px;
+}
