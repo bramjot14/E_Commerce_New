@@ -9,16 +9,17 @@ const Hero = () => {
       <Carousel.Item>
         <Container>
           <Row className="align-items-center py-2">
-            <Col md>
+          <Col md className="text-md-start">
               <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti voluptate eius similique sapiente, eveniet incidunt neque saepe dolorum modi, optio illo aut architecto totam tempore voluptas cupiditate dolorem, culpa iste.
+                Exclusive Deal 40% off!
               </p>
-              <Button variant="primary">More here</Button>
-            </Col>
-            <Col md>
+              <h1>Power Meets Elegance- <br /> Apple Macbook Pro is Here <br /> for you!</h1>
+              <Button className='hero-btn' variant="primary">Order Now</Button>
+          </Col>
+          <Col md>
               <img
                 className="image d-block img-fluid"
-                src="../Assets/hero_image.png" 
+                src="../Assets/macbook.png" 
                 alt="First slide"
               />
             </Col>
@@ -30,15 +31,16 @@ const Hero = () => {
       <Container>
         <Row className="align-items-center py-2">
           <Col md className="text-md-start">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. ...
-            </p>
-            <Button variant="primary">More here</Button>
+               <p>
+                Exclusive Deal 40% off!
+              </p>
+              <h1>Power Meets Elegance- <br /> Apple Macbook Pro is Here <br /> for you!</h1>
+              <Button className='hero-btn' variant="primary">Order Now</Button>
           </Col>
           <Col md>
             <img
               className="image d-block img-fluid"
-              src="../Assets/hero_image.png" 
+              src="../Assets/macbook.png" 
               alt="First slide"
             />
           </Col>
@@ -49,16 +51,17 @@ const Hero = () => {
       <Carousel.Item>
       <Container>
         <Row className="align-items-center py-2">
-          <Col md className="text-md-start">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. ...
-            </p>
-            <Button variant="primary">More here</Button>
+        <Col md className="text-md-start">
+          <p>
+                Exclusive Deal 40% off!
+              </p>
+              <h1>Power Meets Elegance- <br /> Apple Macbook Pro is Here <br /> for you!</h1>
+              <Button className='hero-btn' variant="primary">Order Now</Button>
           </Col>
           <Col md>
             <img
               className="image d-block img-fluid"
-              src="../Assets/hero_image.png" 
+              src="../Assets/macbook.png" 
               alt="First slide"
             />
           </Col>

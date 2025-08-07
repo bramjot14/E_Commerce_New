@@ -45,7 +45,7 @@ const MyNavbar = () => {
             />
           </Col>
           <Col xs="auto">
-            <Button type="submit"><img className='cart_icon' src="../Assets/cart_icon.png" alt="" /></Button>
+            <Button className='navbar-btn' type="submit">Submit</Button>
           </Col>
         </Row>
       </Form>
