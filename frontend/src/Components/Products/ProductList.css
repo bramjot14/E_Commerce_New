@@ -1,0 +1,11 @@
+.product-list {
+    display: flex;
+    gap: 60px;
+}
+
+.productImage {
+    width: 190px;
+    border-radius: 10%;
+    box-shadow: 20px;
+    background-color: bisque;
+}
