@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <Hero></Hero>
+      <h3>Popular Products</h3>
       <ProductList></ProductList>
 
     </div>
