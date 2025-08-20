@@ -1,5 +1,6 @@
 .product-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 60px;
     margin-left: 130px;
 }
@@ -50,4 +51,3 @@
     display: flex;
     gap: 80px;
   }
-  
