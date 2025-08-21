@@ -31,11 +31,18 @@
   color: #61dafb;
 }
 
-h3{
+.popular{
   display: flex;
   align-self: flex-start;
   margin-left: 130px;
   margin-bottom: 0px;
+}
+
+.featured{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
 }
 
 @keyframes App-logo-spin {
