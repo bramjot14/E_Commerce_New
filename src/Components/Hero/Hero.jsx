@@ -9,16 +9,17 @@ const Hero = () => {
       <Carousel.Item>
         <Container>
           <Row className="align-items-center py-2">
-            <Col md>
+          <Col md className="text-md-start">
               <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti voluptate eius similique sapiente, eveniet incidunt neque saepe dolorum modi, optio illo aut architecto totam tempore voluptas cupiditate dolorem, culpa iste.
+                Exclusive Deal 40% off!
               </p>
-              <Button variant="primary">More here</Button>
-            </Col>
-            <Col md>
+              <h1>Power Meets Elegance- <br /> Apple Macbook Pro is Here <br /> for you!</h1>
+              <Button className='hero-btn' variant="primary">Order Now</Button>
+          </Col>
+          <Col md>
               <img
                 className="image d-block img-fluid"
-                src="../Assets/hero_image.png" 
+                src="../Assets/macbook.png" 
                 alt="First slide"
               />
             </Col>
@@ -30,15 +31,17 @@ const Hero = () => {
       <Container>
         <Row className="align-items-center py-2">
           <Col md className="text-md-start">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. ...
-            </p>
-            <Button variant="primary">More here</Button>
+               <p>
+                Hurry up only few lefts!
+              </p>
+              <h1>Next-Level Gaming Starts<br />Here- Discover PlayStation<br />5 Today!</h1>
+              <Button className='hero-btn' variant="primary">Shop Now</Button>
           </Col>
           <Col md>
             <img
               className="image d-block img-fluid"
-              src="../Assets/hero_image.png" 
+              src="../Assets/ps5.png" 
+              id='img2'
               alt="First slide"
             />
           </Col>
@@ -49,16 +52,17 @@ const Hero = () => {
       <Carousel.Item>
       <Container>
         <Row className="align-items-center py-2">
-          <Col md className="text-md-start">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. ...
-            </p>
-            <Button variant="primary">More here</Button>
+        <Col md className="text-md-start">
+          <p>
+                Limited Time Offer 30% off!
+              </p>
+              <h1>JBL Headphones –<br /> Pure Sound, Perfect Fit,<br /> Ready for You!</h1>
+              <Button className='hero-btn' variant="primary">Buy Now</Button>
           </Col>
           <Col md>
             <img
               className="image d-block img-fluid"
-              src="../Assets/hero_image.png" 
+              src="../Assets/headphones.png" 
               alt="First slide"
             />
           </Col>

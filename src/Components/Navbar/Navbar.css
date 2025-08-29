@@ -1,16 +1,47 @@
-.container {
-    margin-bottom: 20px;
-}
-
-.nav-logo {
-    text-align: left;
-}
-
-.cart_icon {
-    width: 28px;
-}
-
-.logo {
-    width: 38px;
-    margin-right: 3px;
-}
+/* Navbar background */
+.bg-body-tertiary {
+    background-color: #ffffff !important;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+  }
+  
+  /* Logo and Brand */
+  .logo {
+    width: 42px;
+    margin-right: 10px;
+  }
+  
+  .brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Button styling */
+  .navbar-btn {
+    background-color: darkorange !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    border-radius: 25px !important;
+  }
+  
+  .navbar-btn:hover {
+    background-color: #e69500 !important;
+  }
+  
+  /* Search input */
+  form input[type="text"] {
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+  }
+  
+  form input[type="text"]:focus {
+    border-color: darkorange;
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+  }
+  

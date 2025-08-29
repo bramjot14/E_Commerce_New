@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+}
+
+/* Container holding the image and the text */
+.container2,
+.container3,
+.container4 {
+  text-align: center;
+  color: white;
+  position: relative;
+  display: inline-block; /* ✅ keeps div only as wide as the image */
+}
+
+.a, .b, .c {
+  width: 100%;  /* or whatever size you want */
+  display: block; /* ✅ ensures no inline spacing issues */
+}
+
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .featuredProducts-btn {
+    width: 120px;
+ 
+  }
+
+  .featuredProducts-btn {
+    background-color: darkorange;
+    color: white;
+    padding: 4px 18px;
+    border: none;   
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
+  }
+  
+  .featuredProducts-btn:hover,
+  .featuredProducts-btn:focus {
+    background-color: #e69500 !important; /* force override */
+    box-shadow: 0 6px 18px rgba(230, 149, 0, 0.6);
+    outline: none;
+  }
+
+  
+
+  

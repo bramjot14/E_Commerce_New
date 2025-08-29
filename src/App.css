@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -26,6 +29,29 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.popular{
+  display: flex;
+  align-self: flex-start;
+  margin-left: 130px;
+  margin-bottom: 0px;
+}
+
+.featured{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.colorful-line {
+  border: none; /* Remove default border */
+  width: 150px;
+  height: 4px; /* Set the thickness */
+  background-color: rgb(112, 1, 1); /* Set the color */
+  margin: auto; /* Add some vertical spacing */
+  margin-bottom: 20px;
 }
 
 @keyframes App-logo-spin {
