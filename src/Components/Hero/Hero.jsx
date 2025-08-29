@@ -13,7 +13,7 @@ const Hero = () => {
               <p>
                 Exclusive Deal 40% off!
               </p>
-              <h1>Power Meets Elegance- <br /> Apple Macbook Pro is Here <br /> for you!</h1>
+              <h1>Power Meets Elegance- <br /> Apple Macbook Pro is Here for you!</h1>
               <Button className='hero-btn' variant="primary">Order Now</Button>
           </Col>
           <Col md>

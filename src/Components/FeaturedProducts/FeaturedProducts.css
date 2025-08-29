@@ -9,12 +9,14 @@
   text-align: center;
   color: white;
   position: relative;
-  display: inline-block; /* ✅ keeps div only as wide as the image */
+  display: inline-block; /* sits side by side */
+  margin: 30px 20px;        /* ✅ horizontal gap */
 }
 
 .a, .b, .c {
   width: 100%;  /* or whatever size you want */
   display: block; /* ✅ ensures no inline spacing issues */
+  
 }
 
   
