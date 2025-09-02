@@ -16,7 +16,6 @@
 .a, .b, .c {
   width: 100%;  /* or whatever size you want */
   display: block; /* ✅ ensures no inline spacing issues */
-  
 }
 
   
@@ -57,7 +56,3 @@
     box-shadow: 0 6px 18px rgba(230, 149, 0, 0.6);
     outline: none;
   }
-
-  
-
-  
