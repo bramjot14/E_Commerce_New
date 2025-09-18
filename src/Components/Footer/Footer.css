@@ -1,0 +1,30 @@
+.Footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;  /* better alignment at top */
+    padding: 20px;
+    gap: 40px; /* spacing between columns */
+    background-color: lightgray;
+    margin-top: 20px;
+  }
+  
+  .Footer_heading {
+    margin-bottom: 15px; /* replace <br/> */
+  }
+  
+  .Footer-left {
+    max-width: 400px; /* reduce width for balance */
+  }
+
+  ul {
+    list-style: none; /* Optional: removes bullet points */
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+
+

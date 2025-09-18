@@ -4,6 +4,8 @@ import Hero from './Components/Hero/Hero';
 import ProductList from './Components/Products/ProductList';
 import FeaturedProducts from './Components/FeaturedProducts/FeaturedProducts';
 import CallToAction from './Components/CallToAction/CallToAction';
+import Form from './Components/Form/Form';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <hr class="colorful-line"/>
       <FeaturedProducts></FeaturedProducts>
       <CallToAction></CallToAction>
+      <Form></Form>
+      <Footer></Footer>
     </div>
   );
 }
