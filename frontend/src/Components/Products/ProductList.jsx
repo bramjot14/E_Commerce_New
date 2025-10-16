@@ -10,7 +10,7 @@ const ProductList = () => {
                 <div className="productItems" key={productItem.id}>
                     <br /><br />
                     <div className="top">
-                    <Link to="/ProductDetail"> <img src={productItem.image} className='productImage' alt="" /> </Link>
+                    <Link to={`/ProductDetail/${productItem.id}`}><img src={productItem.image} className='productImage' alt="" /> </Link>
                     <br />
                     <h5>{productItem.name}</h5>
                     <h6 className='description'>{productItem.description}</h6>
