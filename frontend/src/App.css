@@ -45,6 +45,15 @@
   margin-top: 80px;
 }
 
+.colorful-line {
+  border: none; /* Remove default border */
+  width: 150px;
+  height: 4px; /* Set the thickness */
+  background-color: rgb(112, 1, 1); /* Set the color */
+  margin: auto; /* Add some vertical spacing */
+  margin-bottom: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

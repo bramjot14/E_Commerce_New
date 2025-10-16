@@ -1,6 +1,7 @@
 import React from 'react'
 import "./ProductList.css"
 import { products } from './Products'
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
     return (
@@ -9,7 +10,7 @@ const ProductList = () => {
                 <div className="productItems" key={productItem.id}>
                     <br /><br />
                     <div className="top">
-                    <img src={productItem.image} className='productImage' alt="" />
+                    <Link to="/ProductDetail"> <img src={productItem.image} className='productImage' alt="" /> </Link>
                     <br />
                     <h5>{productItem.name}</h5>
                     <h6 className='description'>{productItem.description}</h6>

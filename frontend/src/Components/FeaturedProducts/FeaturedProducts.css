@@ -9,12 +9,12 @@
   text-align: center;
   color: white;
   position: relative;
-  display: inline-block; /* ✅ keeps div only as wide as the image */
+  display: inline-block; /* sits side by side */
+  margin: 30px 20px;        /* ✅ horizontal gap */
 }
 
-
 .a, .b, .c {
-  width: 80%;  /* or whatever size you want */
+  width: 100%;  /* or whatever size you want */
   display: block; /* ✅ ensures no inline spacing issues */
 }
 
@@ -29,7 +29,13 @@
   .main {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .featuredProducts-btn {
+    width: 120px;
+ 
   }
 
   .featuredProducts-btn {
@@ -50,6 +56,3 @@
     box-shadow: 0 6px 18px rgba(230, 149, 0, 0.6);
     outline: none;
   }
-  
-
-  
