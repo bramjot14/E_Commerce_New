@@ -20,6 +20,17 @@
     border-radius: 12px;
   }
 
+  .product-detail-images {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: row;
+    margin: 10px;
+    max-width: 150px;
+    background-color: #e0e0e0;
+    height: auto;
+    border-radius: 12px;
+  }
+
   .product-detail-description {
    display: block;
    text-align: left ;

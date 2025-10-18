@@ -63,7 +63,7 @@ export const products = [
       description: "Bose QuietComfort 45 – wirele.."
     },
     {
-      id: 20,
+      id: 10,
       name: "Macbook Pro 16",
       price: 2499.99,
       image: "../Assets/macbook16.png",
