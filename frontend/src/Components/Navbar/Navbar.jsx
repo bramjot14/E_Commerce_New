@@ -7,9 +7,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
 
 const MyNavbar = () => {
   return (
@@ -46,6 +46,12 @@ const MyNavbar = () => {
           </Col>
           <Col xs="auto">
             <Button className='navbar-btn' type="submit">Submit</Button>
+          </Col>
+
+          <Col xs="auto">
+          <Link to="/login">
+            <button className="navbar-account">Account</button>
+            </Link>
           </Col>
         </Row>
       </Form>

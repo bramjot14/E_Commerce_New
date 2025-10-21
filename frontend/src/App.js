@@ -8,6 +8,8 @@ import CallToAction from './Components/CallToAction/CallToAction';
 import Form from './Components/Form/Form';
 import Footer from './Components/Footer/Footer';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
+import Login from './Components/Login/Login';
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
         
       } />
             <Route path='/ProductDetail/:id' element={<ProductDetail/>}/>
+            <Route path='/login' element={<Login/>}/>
           </Routes></div>
         </Router>
   
