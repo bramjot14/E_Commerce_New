@@ -5,7 +5,6 @@ import { products } from "./Product";
 import { useState } from 'react';
 
 
-
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find((item) => item.id === Number(id));
@@ -53,7 +52,8 @@ const ProductDetail = () => {
           <h1 className='product-detail-price2'>${product.originalPrice}</h1>
           </div>
           <div className="product-detail-buttons">
-          <button className='product-detail-btn1'>Add to Cart</button>
+          {/* <button className='product-detail-btn1'>Add to Cart</button> */}
+          <AddtoCart id={product.id} name={product.name} price={product.price} />
           <button className='product-detail-btn2'>Buy now</button>
           </div>
           </div>
