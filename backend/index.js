@@ -82,6 +82,19 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Node.js backend for React!');
 });
 
+// ✅ Get All Products (PostgreSQL)
+
+app.get('/allProducts', async (req, res) => {
+  try {
+    const products = await db.any(`SELECT * FROM products`);
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Database Error" });
+  }
+});
+
+
 // ✅ Add Product (PostgreSQL) — matches your products table: id INTEGER PK, name, price, image, description
 app.post('/addProduct', async (req, res) => {
   try {
@@ -190,15 +203,4 @@ app.listen(PORT, () => {
 //   }
 // });
 
-// ✅ Get All Products (PostgreSQL)
-
-// app.get('/allProducts', async (req, res) => {
-//   try {
-//     const products = await db.any(`SELECT * FROM products`);
-//     res.json(products);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Database Error" });
-//   }
-// });
 
