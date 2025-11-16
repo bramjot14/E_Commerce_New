@@ -94,32 +94,42 @@ app.get('/allProducts', async (req, res) => {
   }
 });
 
-
-// ✅ Add Product (PostgreSQL) — matches your products table: id INTEGER PK, name, price, image, description
-app.post('/addProduct', async (req, res) => {
+app.get('/productdetail', async (req, res) => {
   try {
-    // Expect fields: name, price, image, description
-    const { name, price, image, description } = req.body;
-
-    // Basic validation
-    if (!name || !price) {
-      return res.status(400).json({ success: false, error: "Missing required fields: name and price" });
-    }
-
-    // Insert into DB (price here is NUMERIC(10,2) in your schema)
-    const query = `
-      INSERT INTO products (name, price, image, description, created_at)
-      VALUES ($1, $2, $3, $4, now())
-      RETURNING id;
-    `;
-    const result = await db.one(query, [name, price, image || null, description || null]);
-
-    res.json({ success: true, productId: result.id });
+    const products = await db.any(`SELECT * FROM detailedproducts`);
+    res.json(products);
   } catch (error) {
-    console.error('addProduct error:', error);
-    res.status(500).json({ success: false, error: "Database Error" });
+    console.error(error);
+    res.status(500).json({ error: "Database Error" });
   }
 });
+
+
+// ✅ Add Product (PostgreSQL) — matches your products table: id INTEGER PK, name, price, image, description
+// app.post('/addProduct', async (req, res) => {
+//   try {
+//     // Expect fields: name, price, image, description
+//     const { name, price, image, description } = req.body;
+
+//     // Basic validation
+//     if (!name || !price) {
+//       return res.status(400).json({ success: false, error: "Missing required fields: name and price" });
+//     }
+
+//     // Insert into DB (price here is NUMERIC(10,2) in your schema)
+//     const query = `
+//       INSERT INTO products (name, price, image, description, created_at)
+//       VALUES ($1, $2, $3, $4, now())
+//       RETURNING id;
+//     `;
+//     const result = await db.one(query, [name, price, image || null, description || null]);
+
+//     res.json({ success: true, productId: result.id });
+//   } catch (error) {
+//     console.error('addProduct error:', error);
+//     res.status(500).json({ success: false, error: "Database Error" });
+//   }
+// });
 
 // Start the server
 app.listen(PORT, () => {
