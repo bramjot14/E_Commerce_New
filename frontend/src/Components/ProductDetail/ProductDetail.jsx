@@ -5,25 +5,19 @@ import { Link, useParams } from 'react-router-dom';
 
 const ProductDetail = () => {
 
-  // const { id } = useParams();
-  // const product = products.find((item) => item.id === Number(id));
-  // const [mainImage, setMainImage] = useState(product.Image);
-
-  // if (!product) {
-  //   return <h2>Product not found</h2>;
-  // }
-
-  // const handleThumbnailClick = (imageUrl) => {
-  //   setMainImage(imageUrl);
-  // };
-
   const [productdetail, setproductdetail] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const { id } = useParams();
+
 
   const fetchInfo = async () => {
     try {
       const response = await fetch("http://localhost:5002/productdetail");
       const data = await response.json();
       setproductdetail(data);
+      const product = data.find(p => (p.id) === (id));
+      setSelectedProduct(product);
     } catch (error) {
       console.error("Error fetching products:", error);
     }
@@ -33,36 +27,20 @@ const ProductDetail = () => {
     fetchInfo(); // Call the function inside useEffect
   }, []);
 
-  const remove_product = async (id) => {
-    try {
-      await fetch('http://localhost:5002/removeproduct', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id: id }),
-      });
-
-      await fetchInfo(); // Refresh the product list after deletion
-    } catch (error) {
-      console.error("Error removing product:", error);
-    }
-  };
+  if (!selectedProduct) {
+    return <p>Loading product...</p>;
+  }  
 
   return (
+    
     <div className="product-list-container">
-    {productdetail.map((productItem, index) => ( 
-        <React.Fragment key={index}>
-        <div className="product-list-item" key={productItem.id}>
-          <br /><br />
           <div className="product-list-top">
-            <Link to={`/ProductDetail/${productItem.id}`}>
-              <img src={productItem.image} className='product-list-image' alt="" />
+            <Link to={`/ProductDetail/${selectedProduct.id}`}>
+              <img src={selectedProduct.image} className='product-list-image' alt="" />
             </Link>
             <br />
-            <h5>{productItem.name}</h5>
-            <h6 className='product-list-description'>{productItem.description}</h6>
+            <h5>{selectedProduct.name}</h5>
+            <h6 className='product-list-description'>{selectedProduct.description}</h6>
             <h6>
               4.0 
               <img src="../Assets/star_Icon.png" alt="" />
@@ -73,20 +51,41 @@ const ProductDetail = () => {
             </h6>
           </div>
           <div className="product-list-bottom">
-            <h5 className='product-list-price'>${productItem.price}</h5>
-            <h5 className='product-list-price'>${productItem.orignal_price}</h5>
+            <h5 className='product-list-price'>${selectedProduct.price}</h5>
+            <h5 className='product-list-price'>${selectedProduct.orignal_price}</h5>
             <button className='product-list-btn'>Buy now</button>
           </div>
-        </div>
-        </React.Fragment>
-      ))}
-    </div>
-  );
+          
+          </div>
+      );
 };
-
 export default ProductDetail;
 
 
+  // const remove_product = async (id) => {
+  //   try {
+  //     await fetch('http://localhost:5002/removeproduct', {
+  //       method: 'POST',
+  //       headers: {
+  //         Accept: 'application/json',
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ id: id }),
+  //     });
+
+  //     await fetchInfo(); // Refresh the product list after deletion
+  //   } catch (error) {
+  //     console.error("Error removing product:", error);
+  //   }
+  // };
+
+
+
+
+    // {/* {productdetail((productItem, index) => ( 
+    //     <React.Fragment key={index}>
+    //     <div className="product-list-item" key={productItem.id} onClick={() => handleProductClick(productItem.id)}>
+    //       <br /><br /> */}
 
 // import React, { useState, useEffect } from 'react';
 // import "./ProductDetail.css";
