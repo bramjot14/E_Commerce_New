@@ -72,7 +72,9 @@ const ProductDetail = () => {
       </div>
 
       <div className="product-detail-buttons">
-        <button className="product-detail-btn2">Buy now</button>
+      <Link to={`/Cart`}>
+        <button  className="product-detail-btn2">Buy now</button>
+        </Link>
       </div>
     </div>
 

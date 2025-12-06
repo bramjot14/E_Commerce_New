@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // ✅ PostgreSQL Database Connection
 const db = pgp({
-  host: 'localhost',
+  host: 'localhost',  
   port: 5432,
   database: 'ecommerce',  
   user: 'postgres',
@@ -104,113 +104,37 @@ app.get('/productdetail', async (req, res) => {
   }
 });
 
-
-// ✅ Add Product (PostgreSQL) — matches your products table: id INTEGER PK, name, price, image, description
-// app.post('/addProduct', async (req, res) => {
+// app.get('/getCart', async (req, res) => {
 //   try {
-//     // Expect fields: name, price, image, description
-//     const { name, price, image, description } = req.body;
-
-//     // Basic validation
-//     if (!name || !price) {
-//       return res.status(400).json({ success: false, error: "Missing required fields: name and price" });
-//     }
-
-//     // Insert into DB (price here is NUMERIC(10,2) in your schema)
-//     const query = `
-//       INSERT INTO products (name, price, image, description, created_at)
-//       VALUES ($1, $2, $3, $4, now())
-//       RETURNING id;
-//     `;
-//     const result = await db.one(query, [name, price, image || null, description || null]);
-
-//     res.json({ success: true, productId: result.id });
+//     const cart = await db.any(`SELECT * FROM cart`);
+//     res.json(cart);
 //   } catch (error) {
-//     console.error('addProduct error:', error);
-//     res.status(500).json({ success: false, error: "Database Error" });
+//     console.error(error);
+//     res.status(500).json({error: "Database error"});
 //   }
-// });
+// })
+
+// app.get('/addCartItem', async (req, res) => {
+//   try {
+//     const cart = await db.any(`SELECT * FROM cart`);
+//     res.json(cart);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({error: "Database error"});
+//   }
+// })
+
+// app.get('/removeCartItem', async (req, res) => {
+//   try {
+//     const cart = await db.any(`SELECT * FROM cart`);
+//     res.json(cart);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({error: "Database error"});
+//   }
+// })
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
-
-
-
-// ✅ Middleware to fetch user (PostgreSQL)
-
-// const fetchUser = async (req, res, next) => {
-//   const token = req.header('auth-token');
-//   if (!token) {
-//     return res.status(401).send({ error: "Please authenticate using a valid token" });
-//   }
-//   try {
-//     const data = jwt.verify(token, 'secret_ecom');
-//     req.user = data.user;
-//     next();
-//   } catch (error) {
-//     res.status(401).send({ error: "Invalid authentication token" });
-//   }
-// };
-
-// ✅ Add to Cart (PostgreSQL)
-
-// app.post('/addtocart', fetchUser, async (req, res) => {
-//   try {
-//     const { itemId } = req.body;
-//     const userId = req.user.id;
-
-//     const query = `
-//       INSERT INTO cart (user_id, product_id, quantity) 
-//       VALUES ($1, $2, 1)
-//       ON CONFLICT (user_id, product_id) 
-//       DO UPDATE SET quantity = cart.quantity + 1;
-//     `;
-//     await db.none(query, [userId, itemId]);
-
-//     res.json({ success: true, message: "Added to cart" });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Failed to add item to cart" });
-//   }
-// });
-
-// ✅ Remove from Cart (PostgreSQL)
-
-// app.post('/removefromcart', fetchUser, async (req, res) => {
-//   try {
-//     const { itemId } = req.body;
-//     const userId = req.user.id;
-
-//     const query = `
-//       UPDATE cart SET quantity = quantity - 1 
-//       WHERE user_id = $1 AND product_id = $2 AND quantity > 0;
-//     `;
-//     await db.none(query, [userId, itemId]);
-
-//     res.json({ success: true, message: "Removed from cart" });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Failed to remove item from cart" });
-//   }
-// });
-
-// ✅ Get Cart Data (PostgreSQL)
-
-// app.post('/getcart', fetchUser, async (req, res) => {
-//   try {
-//     const userId = req.user.id;
-
-//     const query = `SELECT product_id, quantity FROM cart WHERE user_id = $1`;
-//     const cartItems = await db.any(query, [userId]);
-
-//     res.json(cartItems);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Failed to fetch cart data" });
-//   }
-// });
-
-

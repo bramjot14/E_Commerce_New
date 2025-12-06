@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
 // import Login from './Components/Login/Login';
 import LoginSignup from './Components/Authentication/LoginSignup';
+import Cart from './Components/Cart/Cart';
 
 function App() {
   return (
@@ -27,12 +28,19 @@ function App() {
         <FeaturedProducts></FeaturedProducts>
         <CallToAction></CallToAction>
         <Form></Form>
-        <Footer></Footer> </>
+        <Footer></Footer> </> 
         
       } />
-            <Route path='/ProductDetail/:id' element={<ProductDetail/>}/>
+           
             {/* <Route path='/login' element={<Login/>}/> */}
               <Route path='/login' element={<LoginSignup />} />
+              <Route path='/register' element={<LoginSignup />} />
+              {/* <Route path='/product' element={<LoginSignup />} />  */}
+              <Route path='/ProductDetail/:id' element={<ProductDetail/>}/>
+              <Route path='/cart' element={<Cart />} />
+              {/* <Route path='/checkout' element={<LoginSignup />} /> */}
+              <Route path='/orders' element={<LoginSignup />} />
+              <Route path='/profile' element={<LoginSignup />} />
           </Routes></div>
         </Router>
   

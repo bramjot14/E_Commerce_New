@@ -7,6 +7,7 @@ function AddtoCart(props) {
         <p>id: {props.id}</p>
         <p>Name: {props.name}</p>
         <p>Price: {props.price}</p>
+
       </div>
     );
   }
