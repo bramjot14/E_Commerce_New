@@ -42,22 +42,26 @@ export const CartProvider = ({ children }) => {
 
     const removeFromCart = (id) => {
       setCartItems((items) => {
-        return items
-          .map((item) => {
-            if (item.id === id) {
-              return { ...item, quantity: item.quantity - 1 };
-            }
-            return item;
-          })
-          .filter((item) => item.quantity > 0); // remove item completely if quantity becomes 0
+        const updatedItems = items.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        });
+    
+        const filteredItems = updatedItems.filter((item) =>
+         item.quantity > 0
+        );
+    
+        return filteredItems;
       });
     };
     
-  
     return (
-      <CartContext.Provider value={{ cartItems, addToCart }}>
+      <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
         {children}
       </CartContext.Provider>
     );
   };
-  
+
+
