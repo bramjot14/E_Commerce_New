@@ -55,13 +55,23 @@ export const CartProvider = ({ children }) => {
     
         return filteredItems;
       });
-    };
+  };
+
+        // getCartTotal – total price
+        const getCartTotal = () => {
+          let total = 0;
+   
+           cartItems.forEach((item) => (
+             total += item.price * item.quantity
+           ));
+   
+           return total;
+       }
+       
     
     return (
-      <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+      <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, getCartTotal }}>
         {children}
       </CartContext.Provider>
     );
-  };
-
-
+}
