@@ -67,10 +67,21 @@ export const CartProvider = ({ children }) => {
    
            return total;
        }
+
+       // getTotalItems – total quantity (navbar badge)
+       const getTotalItems = () => {
+        let count = 0;
+
+        cartItems.forEach((item) => {
+          count += item.quantity
+        });
+
+        return count;
+       }
        
     
     return (
-      <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, getCartTotal }}>
+      <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, getCartTotal, getTotalItems }}>
         {children}
       </CartContext.Provider>
     );
