@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import CartContext from './CartContext'
 
+const cartLocalStorage = JSON.parse(localStorage.getItem("cartItems") || "[]")
+
 export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(cartLocalStorage);
+
+    useEffect(() => {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems))
+    }, [cartItems] )
+
+    const removeItemFromCart = (itemToDelete) => {
+      const cartStorageFilter = cartItems.filter((item) => {
+        return item.id !== itemToDelete
+      })
+      setCartItems(cartStorageFilter)
+
+      // localStorage.setItem("cartItems", JSON.stringify(cartStorageFilter))
+    }
   
     const addToCart = (item) => {
   
@@ -78,7 +93,6 @@ export const CartProvider = ({ children }) => {
 
         return count;
        }
-       
     
     return (
       <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, getCartTotal, getTotalItems }}>
